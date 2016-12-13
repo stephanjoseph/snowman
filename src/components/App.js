@@ -17,22 +17,25 @@ class App extends Component {
     // TODO
     this.state = {
       word: 'snowman',
-      guesses: ['s', 'n']
+      guesses: []
     }
   }
 
   choose (letter) {
     // TODO
-    console.log('You clicked', letter)
+    this.Setstate({
+      guesses: {...this.state.guesses, letter}
+    })
   }
 
   get points () {
-    // TODO
-    return 0
+return this.state.word.split('').filter((letter)) => {
+    return this.state.guesses.includes(letter)
   }
 
   render () {
-    return <div className='app'>
+    const letters = ALPHABET.map((letter, i) => {
+
       <main>
         <Snowman step={this.points} size={400} />
         {/* TODO */}
