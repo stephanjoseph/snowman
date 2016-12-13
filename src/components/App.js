@@ -16,6 +16,8 @@ class App extends Component {
     super()
     // TODO
     this.state = {
+      word: 'snowman',
+      guesses: ['s', 'n']
     }
   }
 
@@ -34,7 +36,7 @@ class App extends Component {
       <main>
         <Snowman step={this.points} size={400} />
         {/* TODO */}
-        <Word value='SNOWMAN' guesses={['E', 'M', 'O']} />
+        <Word value='{this.state.word}' guesses={['E', 'M', 'O']} />
         <div className='keyboard'>
           {/* TODO */}
           <LetterButton
